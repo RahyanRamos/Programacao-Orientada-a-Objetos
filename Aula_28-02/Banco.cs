@@ -9,17 +9,21 @@ namespace Exercicio1
 {
     internal class Banco
     {
-        public int id { get; set; }
-        public int agencia { get; set; }
-        public int conta { get; set;}
-        public string nomeProprietario { get; set;}
-        public double saldo;
+        public int id;
+        public int agencia;
+        public int conta;
+        public string nomeProprietario;
+        private double saldo;
+
         public void SetSaldo(double valor)
         {
             if (valor >= 0)
             {
-                saldo += valor
-               
+                saldo += valor;
+            }
+            else
+            {
+                Console.WriteLine("Valor inválido!");
             }
         }
 
