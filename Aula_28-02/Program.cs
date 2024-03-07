@@ -4,7 +4,9 @@ using Exercicio1;
 
 Banco b = new Banco();
 
-b.SetSaldo(-100);
+//b.SetSaldo(-100);
+Console.Write("Saldo: ");
+b.SetSaldo(Convert.ToDouble(Console.ReadLine()));
 
 //Console.Write("Informe o seu ID: ");
 //int id = int.Parse(Console.ReadLine());
