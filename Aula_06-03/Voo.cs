@@ -9,12 +9,12 @@ namespace Aula_06_03
     public class Voo
     {
         public int numero;
-        public DateOnly data;
+        public DateTime data;
         public TimeOnly hora;
         public int maxPassageiro;
-        public bool vazio;
+        public bool[] vazio = new bool[10];
 
-        public Voo(int n, DateOnly dt)
+        public Voo(int n, DateTime dt)
         {
             numero = n;
             data = dt;
@@ -23,7 +23,7 @@ namespace Aula_06_03
 
         //public int ProximoLivre(Voo maxPassageiro, Voo vazio)
         //{
-
+        //    while (true) { }
         //    int poltrona;
 
         //    return poltrona;
