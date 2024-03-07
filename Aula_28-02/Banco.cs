@@ -27,6 +27,11 @@ namespace Exercicio1
             }
         }
 
+        public double GetSaldo()
+        {
+            return saldo;
+        }
+
         public double Deposito(double valor)
         {
             if (valor >= 0)

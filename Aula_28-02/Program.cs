@@ -7,6 +7,7 @@ Banco b = new Banco();
 //b.SetSaldo(-100);
 Console.Write("Saldo: ");
 b.SetSaldo(Convert.ToDouble(Console.ReadLine()));
+Console.WriteLine($"Seu saldo é: {b.GetSaldo()}");
 
 //Console.Write("Informe o seu ID: ");
 //int id = int.Parse(Console.ReadLine());
