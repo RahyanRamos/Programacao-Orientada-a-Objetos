@@ -12,12 +12,14 @@ namespace Aula_06_03
         public DateTime Data;
         public TimeOnly Hora;
         public int MaxPassageiro;
-        //public bool[] vazio = new bool[10];
+        bool[] vazio;
 
-        public Voo(int n, DateTime dt)
+        public Voo(int n, DateTime dt, int vagas)
         {
             Numero = n;
             Data = dt;
+            vazio = new bool[MaxPassageiro];
+            MaxPassageiro = vagas;
         }
 
 
