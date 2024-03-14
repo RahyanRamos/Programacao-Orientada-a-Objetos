@@ -58,5 +58,18 @@ namespace Aula_06_03
                 return " ";
             }
         }
+
+        public int Vagas()
+        {
+            int vagasLivres = 0;
+            for (int i = 0; i < vazio.Length; i++)
+            {
+                if (vazio[i] == false)
+                {
+                    vagasLivres += 1;
+                }
+            }
+            return vagasLivres;
+        }
     }
 }
