@@ -9,26 +9,29 @@ namespace Aula_06_03
     public class Voo
     {
         public int Numero;
-        public DateTime Data;
+        public DateOnly Data;
         public TimeOnly Hora;
         public int MaxPassageiro;
-        bool[] vazio;
+        public bool[] vazio;
 
-        public Voo(int n, DateTime dt, int vagas)
+        public Voo(int n, DateOnly dt, int vagas)
         {
             Numero = n;
             Data = dt;
-            vazio = new bool[MaxPassageiro];
             MaxPassageiro = vagas;
+            vazio = new bool[MaxPassageiro];
         }
 
-
-        //public int ProximoLivre(Voo maxPassageiro, Voo vazio)
-        //{
-        //    while (true) { }
-        //    int poltrona;
-
-        //    return poltrona;
-        //}
+        public int ProximoLivre()
+        {
+            for (int i = 0; i < vazio.Length; i++)
+            {
+                if (vazio[i] == false)
+                {
+                    return i + 1;
+                }
+            }
+            return -1;
+        }
     }
 }
