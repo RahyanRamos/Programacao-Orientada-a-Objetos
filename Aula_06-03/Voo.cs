@@ -8,11 +8,21 @@ namespace Aula_06_03
 {
     public class Voo
     {
-        public int Numero;
-        public DateOnly Data;
+        private int Numero;
+        private DateOnly Data;
         public TimeOnly Hora;
         public int MaxPassageiro;
         public bool[] vazio;
+
+        public int GetNumero()
+        {
+            return Numero;
+        }
+
+        public DateOnly GetData()
+        {
+            return Data;
+        }
 
         public Voo(int n, DateOnly dt, int vagas)
         {
