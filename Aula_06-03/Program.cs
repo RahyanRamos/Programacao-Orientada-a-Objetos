@@ -12,4 +12,8 @@ Voo v1 = new Voo(1, data, 100);
 v1.vazio[0] = true;
 //Console.WriteLine(v1.ProximoLivre());
 
-Console.WriteLine(v1.VerificaStatus(1));
+Console.WriteLine(v1.VerificaStatus(10));
+
+v1.Ocupar(10);
+
+Console.WriteLine(v1.VerificaStatus(10));

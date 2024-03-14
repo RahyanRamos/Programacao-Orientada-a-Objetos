@@ -34,15 +34,28 @@ namespace Aula_06_03
             return -1;
         }
 
-        public string VerificaStatus(int poltrona)
+        public bool VerificaStatus(int poltrona)
         {
             if (vazio[poltrona - 1] == true)
             {
-                return "Ocupado";
+                return true;
             }
             else
             {
-                return "Desocupado";
+                return false;
+            }
+        }
+
+        public string Ocupar(int poltrona)
+        {
+            if (VerificaStatus(poltrona) == false)
+            {
+                vazio[poltrona - 1] = true;
+                return " ";
+            }
+            else
+            {
+                return " ";
             }
         }
     }
