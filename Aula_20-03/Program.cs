@@ -64,5 +64,20 @@ do
             Console.ReadKey();
             Console.Clear();
             break;
+
+        case 3:
+            Console.WriteLine("===EXCLUIR PRODUTO===");
+            Console.WriteLine();
+
+            Console.Write("Código do produto: ");
+            int cod = Convert.ToInt32(Console.ReadLine());
+
+            Produto excluir = produto.FirstOrDefault(x => x.id == cod);
+            produto.Remove(excluir);
+
+            Console.WriteLine("Produto excluído com sucesso!");
+            Console.ReadKey();
+            Console.Clear();
+            break;
     }
 } while (op != 0);
