@@ -12,6 +12,7 @@ namespace AtividadeAvaliativa_Multas.RegrasDeNegocio
         public static bool ValidarCpf(string cpf)
         {
             int[] digitos = new int[11];
+            int[] primeiroDig = new int[9];
             cpf = cpf.Replace(".", "").Replace("-", "");
 
             if (cpf.Length == 11)
@@ -21,9 +22,13 @@ namespace AtividadeAvaliativa_Multas.RegrasDeNegocio
                     digitos[i] = Convert.ToInt32(cpf[i].ToString());
                 }
 
-                for (int i = 0; i < digitos.Length; i++)
+                for (int i = 0; i < digitos.Length - 2; i++)
                 {
                     int multiplica = 10;
+                    primeiroDig[i] = digitos[i] * multiplica;
+                    Console.WriteLine(primeiroDig[i]);
+                    multiplica -= 1;
+                    //necessita refatoração
                 }
 
                 return true;
