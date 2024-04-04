@@ -1,3 +1,8 @@
 ﻿using AtividadeAvaliativa_Multas.RegrasDeNegocio;
 
-Validacoes.ValidarCpf("049.434.965-50");
+string cpf;
+
+Console.WriteLine("===VALIDAR CPF===");
+Console.Write("CPF: ");
+cpf = Console.ReadLine();
+Validacoes.ValidarCpf(cpf);

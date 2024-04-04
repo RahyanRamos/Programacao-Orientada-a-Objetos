@@ -12,7 +12,9 @@ namespace AtividadeAvaliativa_Multas.RegrasDeNegocio
         public static bool ValidarCpf(string cpf)
         {
             int[] digitos = new int[11];
-            int[] primeiroDig = new int[9];
+            int[] primeiroMult = new int[9];
+            int[] segundoMult = new int[10];
+            int multiplica, primeiroSoma, primeiroMod, primeiroVerif, segundoSoma, segundoMod, segundoVerif;
             cpf = cpf.Replace(".", "").Replace("-", "");
 
             if (cpf.Length == 11)
@@ -22,19 +24,67 @@ namespace AtividadeAvaliativa_Multas.RegrasDeNegocio
                     digitos[i] = Convert.ToInt32(cpf[i].ToString());
                 }
 
+                multiplica = 10;
                 for (int i = 0; i < digitos.Length - 2; i++)
                 {
-                    int multiplica = 10;
-                    primeiroDig[i] = digitos[i] * multiplica;
-                    Console.WriteLine(primeiroDig[i]);
-                    multiplica -= 1;
-                    //necessita refatoração
+                    primeiroMult[i] = digitos[i] * multiplica;
+                    multiplica--;
+                }
+
+                primeiroSoma = primeiroMult.Sum();
+
+                primeiroMod = primeiroSoma % 11;
+
+                if (primeiroMod < 2)
+                {
+                    primeiroVerif = 0;
+                }
+                else
+                {
+                    primeiroVerif = 11 - primeiroMod;
+                }
+
+                if (primeiroVerif == digitos[9])
+                {
+                    multiplica = 11;
+                    for (int i = 0; i < digitos.Length - 1; i++)
+                    {
+                        segundoMult[i] = digitos[i] * multiplica;
+                        multiplica--;
+                    }
+
+                    segundoSoma = segundoMult.Sum();
+
+                    segundoMod = segundoSoma % 11;
+
+                    if (segundoMod < 2)
+                    {
+                        segundoVerif = 0;
+                    }
+                    else
+                    {
+                        segundoVerif = 11 - segundoMod;
+                    }
+
+                    if (segundoVerif == digitos[10])
+                    {
+                        Console.WriteLine("CPF válido!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("CPF inválido!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("CPF inválido!");
                 }
 
                 return true;
             }
             else
             {
+                Console.WriteLine("CPF inválido!");
                 return false;
             }
         }
