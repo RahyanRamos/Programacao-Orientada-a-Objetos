@@ -69,22 +69,59 @@ namespace AtividadeAvaliativa_Multas.RegrasDeNegocio
                     if (segundoVerif == digitos[10])
                     {
                         Console.WriteLine("CPF válido!");
+                        return true;
                     }
                     else
                     {
                         Console.WriteLine("CPF inválido!");
+                        return false;
                     }
                 }
                 else
                 {
                     Console.WriteLine("CPF inválido!");
+                    return false;
                 }
-
-                return true;
             }
             else
             {
                 Console.WriteLine("CPF inválido!");
+                return false;
+            }
+        }
+
+        public static bool ValidarNiv(string niv)
+        {
+            niv = niv.ToUpper();
+
+            if (niv.Length == 17)
+            {
+                if (niv.Contains("O") || niv.Contains("Q") || niv.Contains("I"))
+                {
+                    Console.WriteLine("NIV inválido por conter O, Q ou I");
+                    return false;
+                }
+                else
+                {
+                    for (int i = 13; i <= niv.Length; i++)
+                    {
+                        if (!char.IsDigit(niv[i]))
+                        {
+                            Console.WriteLine("Os 4 últimos digitos não pode ter letra");
+                            return false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("NIV válido");
+                            return true;
+                        }
+                    }
+                    return true;
+                }
+            }
+            else
+            {
+                Console.WriteLine("NIV inválido!");
                 return false;
             }
         }
