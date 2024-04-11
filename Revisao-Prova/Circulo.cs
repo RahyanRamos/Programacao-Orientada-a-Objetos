@@ -22,7 +22,7 @@ namespace Revisao_Prova
         public double Calculo()
         {
             double pi = 3.14;
-            double area = pi * raio;
+            double area = pi * Math.Pow(raio, 2);
 
             return area;
         }
